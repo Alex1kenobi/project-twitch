@@ -1,26 +1,45 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import {Card} from "../component/card"
+import {Card2} from "../component/card2"
+
+import heroImg from '../../img/slider_img_bg.png';
+const heroInformation = {
+    id: "1",
+    img: heroImg,
+    titleTag: "#world class gameddddd",
+    title: "Are You ready For your next Challenge ?",
+    btnText: "Read More",
+}
+const { img, titleTag, title } = heroInformation;
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
+    return (
+        <div>
+        <section id="home" className="slider-area slider-four fix p-relative">
+            <div className="slider-active">
+                <div className="single-slider slider-bg d-flex align-items-center" style={{ background: `url(${img}) no-repeat center center / cover` }}>
+                    <div className="container">
+                        <div className="row justify-content-center pt-50">
+                            <div className="col-lg-1 col-md-1"></div>
+                            <div className="col-lg-6 col-md-6">
+                                <div className="slider-content s-slider-content">
+                                    <h5 data-animation="fadeInDown" data-delay=".4s">{titleTag}</h5>
+                                    <h2 data-animation="fadeInUp" data-delay=".4s">{title}</h2>
+                                </div>
+                            </div>
+                            <div className="col-lg-5 col-md-5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <Card2/>
+        </div>
 
-	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div className="alert alert-info">
-				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
-			</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://github.com/4GeeksAcademy/react-flask-hello/tree/95e0540bd1422249c3004f149825285118594325/docs">
-					Read documentation
-				</a>
-			</p>
-		</div>
-	);
-};
+    );
+}
+
+
+export default Home;
