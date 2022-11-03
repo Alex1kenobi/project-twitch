@@ -5,19 +5,12 @@ import {Card} from "../component/card"
 import {Card2} from "../component/card2"
 
 import heroImg from '../../img/slider_img_bg.png';
-const heroInformation = {
-    id: "1",
-    img: heroImg,
-    titleTag: "#world class gameddddd",
-    title: "Are You ready For your next Challenge ?",
-    btnText: "Read More",
-}
-const { img, titleTag, title } = heroInformation;
+
 
 export const Home = () => {
     return (
         <div>
-        <section id="home" className="slider-area slider-four fix p-relative">
+{/*         <section id="home" className="slider-area slider-four fix p-relative">
             <div className="slider-active">
                 <div className="single-slider slider-bg d-flex align-items-center" style={{ background: `url(${img}) no-repeat center center / cover` }}>
                     <div className="container">
@@ -34,8 +27,8 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
-        </section>
-        <Card/>
+        </section> */}
+        <Card2/>
         </div>
 
     );

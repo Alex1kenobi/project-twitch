@@ -17,9 +17,7 @@ flask-cors = "*"
 gunicorn = "*"
 cloudinary = "*"
 flask-admin = "*"
-
-[requires]
-python_version = "3.8"
+flask-jwt-extended = "*"
 
 [scripts]
 start="flask run -p 3001 -h 0.0.0.0"

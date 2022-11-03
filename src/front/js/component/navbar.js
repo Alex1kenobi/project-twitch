@@ -1,13 +1,16 @@
 import React, {useState} from "react";
 import { gsap } from "gsap";
 
+import Logo from "../../img/a1k-entero.png";
+import logo from "../../img/a1k-entero.png";
+
 const { useRef, useEffect, createRef } = React
 
 const items = [
     {
       name: "Home",
-      color: "#f44336",
-      href: "https://3000-4geeksacade-reactflaskh-ghmkwgehanx.ws-eu73.gitpod.io/"
+      color: "#e91e63",
+      href: "/"
     },
     {
       name: "Streamings",
@@ -16,17 +19,17 @@ const items = [
     },
     {
       name: "Entrevistas",
-      color: "#9c27b0",
-      href: "#"
+      color: "#e91e63",
+      href: "/entrevistas"
     },
     {
       name: "Sobre mi",
-      color: "#673ab7",
+      color: "#e91e63",
       href: "#"
     },
     {
       name: "Perfil",
-      color: "#3f51b5",
+      color: "#e91e63",
       href: "https://3000-4geeksacade-reactflaskh-ghmkwgehanx.ws-eu73.gitpod.io/user-profile"
     }
   ];
@@ -77,6 +80,9 @@ export const Navbar = () => {
             ref={$root}
             className="menu"
           >
+          <a class="navbar-brand" href="#" img src ="/workspace/project-4geeks/src/front/img/a1k-entero.png"></a>
+
+        
             {items.map((item, index) => (
               <a
                 key={item.name}

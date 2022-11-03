@@ -289,3 +289,12 @@ h6 span{
 	width: auto;
 	display: block;
 }
+
+
+.ocultar {
+  display: none;
+}
+
+.mostrar {
+  display: block;
+}
