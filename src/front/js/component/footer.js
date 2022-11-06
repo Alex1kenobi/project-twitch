@@ -1,106 +1,25 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../img/logo.png";
+import twitter from "../../img/twitter.svg" 
 
 export const Footer = () => {
   return (
-    <div>
-      <footer
-        class="text-center text-white"
-        style={{ backgroundColor: "#3f51b5" }}
-      >
-        <div class="container">
-          <section class="mt-5">
-            <div class="row text-center d-flex justify-content-center pt-5">
-              <div class="col-md-2">
-                <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">
-                    About us
-                  </a>
-                </h6>
-              </div>
+    <footer class="py-3"><div class="container">
+    <div class="d-flex justify-content-center align-items-center flex-column">
+      <h5 class="mb-3"><a href="#">Alex1kenobi</a></h5>
+      <div class="d-flex mb-3">
+        <a href="#">
+          <img src={Logo}/></a>
 
-              <div class="col-md-2">
-                <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">
-                    Products
-                  </a>
-                </h6>
-              </div>
-
-              <div class="col-md-2">
-                <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">
-                    Awards
-                  </a>
-                </h6>
-              </div>
-
-              <div class="col-md-2">
-                <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">
-                    Help
-                  </a>
-                </h6>
-              </div>
-
-              <div class="col-md-2">
-                <h6 class="text-uppercase font-weight-bold">
-                  <a href="#!" class="text-white">
-                    Contact
-                  </a>
-                </h6>
-              </div>
-            </div>
-          </section>
-
-          <hr class="my-5" />
-
-          <section class="mb-5">
-            <div class="row d-flex justify-content-center">
-              <div class="col-lg-8">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                  distinctio earum repellat quaerat voluptatibus placeat nam,
-                  commodi optio pariatur est quia magnam eum harum corrupti
-                  dicta, aliquam sequi voluptate quas.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section class="text-center mb-5">
-            <a href="" class="text-white me-4">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fab fa-google"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fab fa-github"></i>
-            </a>
-          </section>
-        </div>
-
-        <div
-          class="text-center p-3"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-        >
-          © 2020 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/">
-            MDBootstrap.com
-          </a>
-        </div>
-      </footer>
+        <a href="#">
+          <img src="src/front/img/instagram.svg" /></a>
+      </div>
+      <div class="d-flex">
+        <p class="mb-0 small text-muted">© 2022 Alex1kenobi. All rights reserved.</p>
+      </div>
     </div>
+    </div>
+  </footer>
   );
 };

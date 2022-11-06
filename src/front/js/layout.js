@@ -4,10 +4,12 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
+import { Demo2 } from "./pages/demo2";
 import { Single } from "./pages/single";
 import { Login } from "./pages/login";
 import { UserProfile } from "./pages/user-profile";
 import { Interview } from "./pages/interview";
+import { QuestionList } from "./pages/question-list";
 
 
 import injectContext from "./store/appContext";
@@ -31,8 +33,9 @@ const Layout = () => {
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
+                        <Route element={<Demo2/>} path="/demo2"/>
                         <Route element={<Login/>} path="/login"/>
-
+                        <Route element={<QuestionList/>} path="/question-list"/>
                         <Route element={<Interview/>} path="/entrevistas"/>
                         <Route element={<UserProfile />} path="/user-profile" />
                         <Route element={<h1>Not found!</h1>} />

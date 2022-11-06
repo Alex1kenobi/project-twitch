@@ -30,7 +30,7 @@ const items = [
     {
       name: "Perfil",
       color: "#e91e63",
-      href: "https://3000-4geeksacade-reactflaskh-ghmkwgehanx.ws-eu73.gitpod.io/user-profile"
+      href: "/user-profile"
     }
   ];
 

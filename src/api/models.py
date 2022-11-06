@@ -36,7 +36,7 @@ class User(db.Model):
             "id": self.id,
             "email": self.email,
             "username": self.username,
-            "role": self.role,
+            #"role": self.role_id, /// ver porqué no funcionaba lo del role
    }
 
 class Rol(db.Model):
