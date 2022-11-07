@@ -4,48 +4,101 @@ import "../../styles/card.css";
 export const Card = () => {
     return (
 
-<section class="vh-100" style={{backgroundColor: "#9de2ff"}}>
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-md-9 col-lg-7 col-xl-5">
-        <div class="card" style={{borderRadius: "15px"}}>
-          <div class="card-body p-4">
-            <div class="d-flex text-black">
-              <div class="flex-shrink-0">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
-                  alt="Generic placeholder image" class="img-fluid"
-                  style={{width: "180px", borderRadius: "10px"}}/>
-              </div>
-              <div class="flex-grow-1 ms-3">
-                <h5 class="mb-1">Danny McLoan</h5>
-                <p class="mb-2 pb-1" style={{color: "#2b2a2a"}}>Senior Journalist</p>
-                <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
-                  style={{backgroundColor: "#efefef"}}>
-                  <div>
-                    <p class="small text-muted mb-1">Articles</p>
-                    <p class="mb-0">41</p>
-                  </div>
-                  <div class="px-3">
-                    <p class="small text-muted mb-1">Followers</p>
-                    <p class="mb-0">976</p>
-                  </div>
-                  <div>
-                    <p class="small text-muted mb-1">Rating</p>
-                    <p class="mb-0">8.5</p>
-                  </div>
+
+<div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card p-0">
+                    <div class="card-image">
+                    <img src="https://images.pexels.com/photos/2746187/pexels-photo-2746187.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                            alt=""/>
+                    </div>
+                    <div class="card-content d-flex flex-column align-items-center">
+                        <h4 class="pt-2">SomeOne Famous</h4>
+                        <h5>Creative Desinger</h5>
+
+                        <ul class="social-icons d-flex justify-content-center">
+                            <li style={{i:"1"}}>
+                                <a href="#">
+                                    <span class="fab fa-facebook"></span>
+                                </a>
+                            </li>
+                            <li style={{i:"2"}}>
+                                <a href="#">
+                                    <span class="fab fa-twitter"></span>
+                                </a>
+                            </li>
+                            <li style={{i:"3"}}>
+                                <a href="#">
+                                    <span class="fab fa-instagram"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="d-flex pt-1">
-                  <button type="button" class="btn btn-outline-primary me-1 flex-grow-1">Chat</button>
-                  <button type="button" class="btn btn-primary flex-grow-1">Follow</button>
-                </div>
-              </div>
             </div>
-          </div>
+            <div class="col-lg-4">
+                <div class="card p-0">
+                    <div class="card-image">
+
+                    </div>
+                    <div class="card-content d-flex flex-column align-items-center">
+                        <h4 class="pt-2">SomeOne Famous</h4>
+                        <h5>Creative Desinger</h5>
+
+                        <ul class="social-icons d-flex justify-content-center">
+                        <li style={{i:"1"}}>
+                                <a href="#">
+                                    <span class="fab fa-facebook"></span>
+                                </a>
+                            </li>
+                            <li style={{i:"2"}}>
+                                <a href="#">
+                                    <span class="fab fa-twitter"></span>
+                                </a>
+                            </li>
+                            <li style={{i:"3"}}>
+                                <a href="#">
+                                    <span class="fab fa-instagram"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card p-0">
+                    <div class="card-image">
+
+                    </div>
+                    <div class="card-content d-flex flex-column align-items-center">
+                        <h4 class="pt-2">SomeOne Famous</h4>
+                        <h5>Creative Desinger</h5>
+
+                        <ul class="social-icons d-flex justify-content-center">
+                        <li style={{i:"1"}}>
+                                <a href="#">
+                                    <span class="fab fa-facebook"></span>
+                                </a>
+                            </li>
+                            <li style={{i:"2"}}>
+                                <a href="#">
+                                    <span class="fab fa-twitter"></span>
+                                </a>
+                            </li>
+                            <li style={{i:"3"}}>
+                                <a href="#">
+                                    <span class="fab fa-instagram"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </div>
     </div>
-  </div>
-</section>
+
 
     )
 
