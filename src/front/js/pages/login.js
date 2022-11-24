@@ -1,25 +1,43 @@
 import React, { useState, useContext } from "react";
 import "../../styles/login.css";
-import {Context} from "../store/appContext"
+import { Context } from "../store/appContext";
+
+import { useNavigate } from "react-router-dom";
+
 export const Login = () => {
-
-
-  
-  const {store, actions} = useContext (Context)
+  const { store, actions } = useContext(Context);
   const [error, setError] = useState("");
   const [user, setUser] = useState({});
   const [password2, setPassword2] = useState("");
 
+  const navigate = useNavigate()
+
+  const loginNavigate = async (user) => {
+     try {
+     await actions.login(user);
+if (localStorage.getItem("token")){
+      navigate("/entrevistas")}
+      else {
+        setError (store.message); 
+      }
+    } catch (error) {
+      
+    }
+  };
+
 
   const verificarPasswords = (user) => {
-    console.log (user);
+    console.log(user);
     // Verificamos si las constraseñas no coinciden
-    if (user.password1 != password2) {
+    if (user.password != password2) {
       // Si las constraseñas no coinciden mostramos un mensaje
       setError("La contraseña no coincide");
-    } else (
- setError ("")
-    )
+    } else {
+      actions.register(user);
+      if (localStorage.getItem("token")){
+        navigate("/entrevistas")
+      }
+    }
   };
 
   {
@@ -61,9 +79,9 @@ export const Login = () => {
                             <div class="form-group">
                               <input
                                 type="email"
-                                onChange={(e)=>{
-                                  setUser({...user, email:e.target.value})
-                                }}  
+                                onChange={(e) => {
+                                  setUser({ ...user, email: e.target.value });
+                                }}
                                 name="logemail"
                                 class="form-style"
                                 placeholder="Tu email"
@@ -75,8 +93,11 @@ export const Login = () => {
                             <div class="form-group mt-2">
                               <input
                                 type="password"
-                                onChange={(e)=>{
-                                  setUser({...user, password:e.target.value})
+                                onChange={(e) => {
+                                  setUser({
+                                    ...user,
+                                    password: e.target.value,
+                                  });
                                 }}
                                 name="logpass"
                                 class="form-style"
@@ -86,9 +107,13 @@ export const Login = () => {
                               />
                               <i class="input-icon fas fa-key"></i>
                             </div>
-                            <button class="btn mt-4" onClick={()=>{
-                          actions.login (user)
-                            }} >
+                            <p>{error}</p>
+                            <button
+                              class="btn mt-4"
+                              onClick={() => {
+                                loginNavigate(user)
+                              }}
+                            >
                               Enviar
                             </button>
                             <p class="mb-0 mt-4 text-center">
@@ -106,8 +131,11 @@ export const Login = () => {
                             <div class="form-group">
                               <input
                                 type="text"
-                                onChange={(e)=>{
-                                  setUser({...user, username:e.target.value})
+                                onChange={(e) => {
+                                  setUser({
+                                    ...user, rol_id:2, // Esto del rol_id le pone rol "2" (usuario) a todo cristo
+                                    username: e.target.value,
+                                  });
                                 }}
                                 name="logname"
                                 class="form-style"
@@ -120,8 +148,8 @@ export const Login = () => {
                             <div class="form-group mt-2">
                               <input
                                 type="email"
-                                onChange={(e)=>{
-                                  setUser({...user, email:e.target.value})
+                                onChange={(e) => {
+                                  setUser({ ...user, email: e.target.value });
                                 }}
                                 name="logemail"
                                 class="form-style"
@@ -139,9 +167,8 @@ export const Login = () => {
                                 placeholder="Tu contraseña"
                                 id="pass1"
                                 autocomplete="off"
-
-                                onChange={(e) => 
-                                  setUser({ ...user, password1: e.target.value})
+                                onChange={(e) =>
+                                  setUser({ ...user, password: e.target.value })
                                 }
                               />
                               <i class="input-icon fas fa-key"></i>
@@ -154,13 +181,13 @@ export const Login = () => {
                                 placeholder="Repite tu contraseña"
                                 id="pass2"
                                 autocomplete="off"
-
-                                onChange={(e) => 
-                                  setPassword2(e.target.value)
-                                }
+                                onChange={(e) => setPassword2(e.target.value)}
                               />
                               <i class="input-icon fas fa-key"></i>
                             </div>
+
+                           
+
                             <p>{error}</p>
                             <button
                               href="#"

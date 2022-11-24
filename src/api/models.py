@@ -36,7 +36,7 @@ class User(db.Model):
             "id": self.id,
             "email": self.email,
             "username": self.username,
-            #"role": self.role_id, /// ver porqué no funcionaba lo del role
+            "rol": self.rol_id,
    }
 
 class Rol(db.Model):
@@ -79,9 +79,12 @@ class Question(db.Model):
 
 class Interviewer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(200), nullable=False)
+    name = db.Column(db.String(200), nullable=False, unique=True)
     tag = db.Column(db.String(80), nullable=True)
     questions = db.relationship('Question', backref='interviewer', lazy=True)
+    position = db.Column(db.String(100), nullable=False)
+    photo = db.Column(db.String(300), nullable=False)
+    description = db.Column(db.String(2000), nullable=True)
 
     def __repr__(self):
         return f'<Interviewer {self.name}>'
@@ -91,6 +94,10 @@ class Interviewer(db.Model):
             "id": self.id,
             "name": self.name,
             "tag": self.tag,
+            "position": self.position,
+            "questions": self.questions,
+            "photo": self.photo,
+            "description": self.description,
         }
 
 class Category(db.Model):

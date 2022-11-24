@@ -1,15 +1,15 @@
 import React from "react";
-import "../../styles/dashboard.css";
+import "../../styles/question-table.css";
 
-export const Dashboard = () => {
+export const QuestionTable = () => {
   return (
     <div class="padding">
       <div class="row container d-flex justify-content-center">
-        <div class="col-lg-8 grid-margin stretch-card">
+        <div class="col grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
               <div class="row">
-                <div class="col-md-8">
+                <div class="col">
                   <h4 class="card-title">Tabla de preguntas</h4>
                 </div>
               </div>

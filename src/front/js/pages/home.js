@@ -100,7 +100,6 @@ export const Home = () => {
 </section>
 
         <Card2/>
-        <Card/>
         </div>
 
     );
