@@ -1,6 +1,7 @@
 {
     "_meta": {
         "hash": {
+
             "sha256": "4cb5f3d5753c7fbe330fa48d1603e5206ff1a663ba1a8f8be74eadfe344846c5"
         },
         "pipfile-spec": 6,
@@ -70,6 +71,14 @@
             "index": "pypi",
             "version": "==3.0.10"
         },
+        "flask-jwt-extended": {
+            "hashes": [
+                "sha256:62b521d75494c290a646ae8acc77123721e4364790f1e64af0038d823961fbf0",
+                "sha256:a85eebfa17c339a7260c4643475af444784ba6de5588adda67406f0a75599553"
+            ],
+            "index": "pypi",
+            "version": "==4.4.4"
+        },
         "flask-migrate": {
             "hashes": [
                 "sha256:57d6060839e3a7f150eaab6fe4e726d9e3e7cffe2150fb223d73f92421c6d1d9",
@@ -96,6 +105,7 @@
         },
         "greenlet": {
             "hashes": [
+
                 "sha256:0120a879aa2b1ac5118bce959ea2492ba18783f65ea15821680a256dfad04754",
                 "sha256:025b8de2273d2809f027d347aa2541651d2e15d593bbce0d5f502ca438c54136",
                 "sha256:05ae7383f968bba4211b1fbfc90158f8e3da86804878442b4fb6c16ccbcaa519",
@@ -262,6 +272,7 @@
         },
         "psycopg2-binary": {
             "hashes": [
+
                 "sha256:02cde837df012fa5d579b9cf4bc8e1feb460f38d61f7a4ab4a919d55a9f6eeef",
                 "sha256:044b6ab68613de7ea1e63856627deea091bfea09dea5ab4f050b13250fd18cab",
                 "sha256:0a9465f0aa36480c8e7614991cbe8ca8aa16b0517c5398a49648ce345e446c19",
