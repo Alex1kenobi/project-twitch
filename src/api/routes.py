@@ -45,7 +45,7 @@ def verify():
     if user:
         return jsonify ({"logged": True, "user":user.serialize()}), 200
     else:
-        return jsonify ({"logged": False, "msg": "Por favor, inicia sesión"}), 400
+        return jsonify ({"logged": False, "msg": "Por favor, inicia sesión."}), 400
 
 
 @api.route('/register', methods=['POST'])
