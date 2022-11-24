@@ -8,6 +8,7 @@ import heroImg from '../../img/slider_img_bg.png';
 
 
 export const Home = () => {
+
     return (
         <div>
 <section class="py-5">
