@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Rol, Interviewer, Category
+from api.models import db, User, Rol, Interviewer, Category, Question
 from api.utils import generate_sitemap, APIException
 
 from flask_jwt_extended import create_access_token
@@ -103,3 +103,9 @@ def preguntas():
 def getcategory():
     categories = Category.query.all()
     return jsonify ({"Categories": list(map(lambda x:x.serialize(), categories))}), 200
+
+
+@api.route('/preguntas/<int:id>', methods=['GET'])
+def getPreguntasEntrevistado(id): 
+    pregunta = Question.query.filter_by(interviewer_id=id).first()
+    return jsonify ({"Preguntas": pregunta.serialize()}), 200

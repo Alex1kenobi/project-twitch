@@ -7,7 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	    roles: [],
       entrevistados: [],
       entrevistado: {},
-      categories: []
+      categories: [],
+      preguntas_entrevistado: []
     },
     actions: {
       login: async (user) => {
@@ -143,8 +144,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           // fetching data from the backend
           const resp = await fetch(process.env.BACKEND_URL + "/api/preguntas", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            Authorization: "Bearer " + localStorage.getItem("token"),
+            headers: { "Content-Type": "application/json",Authorization: "Bearer " + localStorage.getItem("token"),},
+
             body: JSON.stringify(question),
           });
           const data = await resp.json();
@@ -155,6 +156,25 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log("Error loading message from backend", error);
         }
       },
+
+      getPreguntasEntrevistado: async (id) => {
+        try {
+          // fetching data from the backend
+          const resp = await fetch(process.env.BACKEND_URL + "/api/preguntas/" +id, { // +id es lo que está en el routes línea 108, pero con otra nomenclatura
+            method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			  },
+
+          });
+          const data = await resp.json();
+          setStore({ preguntas_entrevistado: data.Preguntas }); // "preguntas": esto tiene que ser igual a lo que hay entre comillas del Jsonify de la 111 del routes
+          // don't forget to return something, that is how the async resolves
+        } catch (error) {
+          console.log("Error loading message from backend", error);
+        }
+      },
+
 
 
       logout: () => {
